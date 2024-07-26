@@ -1,0 +1,25 @@
+2024-06-06 14:39:53.951 UTC [1] LOG:  starting PostgreSQL 16.3 (Debian 16.3-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-06-06 14:39:53.954 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2024-06-06 14:39:53.955 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2024-06-06 14:39:53.958 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-06-06 14:39:53.965 UTC [29] LOG:  database system was interrupted; last known up at 2024-06-06 14:35:04 UTC
+2024-06-06 14:39:54.063 UTC [29] LOG:  database system was not properly shut down; automatic recovery in progress
+2024-06-06 14:39:54.066 UTC [29] LOG:  redo starts at 0/2B89790
+2024-06-06 14:39:54.066 UTC [29] LOG:  invalid record length at 0/2B89C60: expected at least 24, got 0
+2024-06-06 14:39:54.066 UTC [29] LOG:  redo done at 0/2B89C38 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2024-06-06 14:39:54.074 UTC [27] LOG:  checkpoint starting: end-of-recovery immediate wait
+2024-06-06 14:39:54.089 UTC [27] LOG:  checkpoint complete: wrote 7 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.007 s, sync=0.003 s, total=0.018 s; sync files=5, longest=0.002 s, average=0.001 s; distance=1 kB, estimate=1 kB; lsn=0/2B89C60, redo lsn=0/2B89C60
+2024-06-06 14:39:54.094 UTC [1] LOG:  database system is ready to accept connections
+2024-06-06 14:39:56.305 UTC [34] LOG:  could not receive data from client: Connection reset by peer
+2024-06-06 14:39:56.538 UTC [36] FATAL:  terminating connection due to administrator command
+2024-06-06 14:39:56.640 UTC [27] LOG:  checkpoint starting: immediate force wait
+2024-06-06 14:39:56.657 UTC [27] LOG:  checkpoint complete: wrote 5 buffers (0.0%); 0 WAL file(s) added, 0 removed, 1 recycled; write=0.003 s, sync=0.002 s, total=0.018 s; sync files=5, longest=0.002 s, average=0.001 s; distance=4595 kB, estimate=4595 kB; lsn=0/3006AD0, redo lsn=0/3006A98
+2024-06-06 14:39:56.854 UTC [38] FATAL:  terminating connection due to administrator command
+2024-06-06 14:39:56.957 UTC [27] LOG:  checkpoint starting: immediate force wait
+2024-06-06 14:39:56.974 UTC [27] LOG:  checkpoint complete: wrote 28 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.004 s, total=0.018 s; sync files=17, longest=0.002 s, average=0.001 s; distance=4635 kB, estimate=4635 kB; lsn=0/348D6D8, redo lsn=0/348D6A0
+2024-06-06 14:39:57.137 UTC [39] FATAL:  terminating connection due to administrator command
+2024-06-06 14:39:57.240 UTC [27] LOG:  checkpoint starting: immediate force wait
+2024-06-06 14:39:57.255 UTC [27] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.003 s, total=0.016 s; sync files=4, longest=0.002 s, average=0.001 s; distance=4588 kB, estimate=4630 kB; lsn=0/3908A48, redo lsn=0/3908A10
+2024-06-06 14:39:57.477 UTC [40] FATAL:  terminating connection due to administrator command
+2024-06-06 14:39:57.584 UTC [27] LOG:  checkpoint starting: immediate force wait
+2024-06-06 14:39:57.599 UTC [27] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.003 s, total=0.015 s; sync files=4, longest=0.002 s, average=0.001 s; distance=4589 kB, estimate=4626 kB; lsn=0/3D83E98, redo lsn=0/3D83E60

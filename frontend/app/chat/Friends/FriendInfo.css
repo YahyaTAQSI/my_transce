@@ -1,0 +1,254 @@
+.current_friend_info_container,
+.current_friend_info,
+.current_friend_rank,
+.current_friend_achievements_container,
+.current_friend_block {
+  /* border: 1px solid red; */
+}
+
+.current_friend_info_container,
+.current_friend_rank,
+.current_friend_info,
+.current_friend_block,
+.current_friend_achievements_container {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+/*-----------------Container------------------*/
+.current_friend_info_container {
+  /* border: 1px solid red; */
+  height: 100%;
+  justify-content: space-between;
+}
+
+/*-----------------friend info section------------------*/
+
+.current_friend_info {
+  justify-content: space-evenly;
+  height: 30%;
+}
+.current_friend_avatar {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+}
+.current_friend_info h1 {
+  text-align: center;
+  width: 90%;
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.current_friend_info h3 {
+  text-align: center;
+  font-size: 1rem;
+  color: gray;
+}
+/*-----------------friend rank section------------------*/
+
+.current_friend_rank {
+  height: 20%;
+  justify-content: space-evenly;
+  padding: 10px 0;
+}
+.current_friend_rank h1 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+.current_friend_rank_badge {
+  width: 100px;
+  height: 100px;
+  z-index: 555;
+  filter: drop-shadow(0 0 50px #1ce14d40);
+}
+.current_friend_rank h3 {
+  color: #1ce14e;
+  text-transform: capitalize;
+  text-shadow: 0 0 15px #1ce14e;
+}
+/*-----------------friend achievement section------------------*/
+
+.current_friend_achievements_container {
+  height: 40%;
+  justify-content: space-evenly;
+}
+
+.current_friend_achievements_container h1 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.current_friend_achievements {
+  width: 90%;
+  height: 80%;
+  background: #565659;
+  border-radius: 10px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  /* padding: 5px; */
+}
+.current_friend_no_achievements {
+  width: 90%;
+  height: 80%;
+  display: grid;
+  place-items: center;
+}
+
+.current_friend_no_achievements img {
+  width: auto;
+  height: 50%;
+  z-index: 555;
+  filter: drop-shadow(0 0 50px #1ce14d40);
+}
+
+.current_friend_achievement {
+  padding: 10px;
+  width: 100%;
+  height: 70px;
+
+  margin-bottom: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.current_friend_achievement_badge {
+  width: 75px;
+  height: 75px;
+}
+
+.current_friend_achievement span {
+  font-size: 1.2rem;
+  width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/*-----------------friend block section------------------*/
+
+.current_friend_block * {
+  /* border: 1px solid red; */
+}
+.current_friend_block {
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 5%;
+  flex-direction: row;
+  justify-content: center;
+}
+.block_current_friend {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.4s;
+  border: none;
+  outline: none;
+
+  height: 35px;
+  font-size: 1.4rem;
+  color: #ff3355;
+  text-transform: capitalize;
+  background: transparent;
+
+  /* justify-content: flex-start; */
+  /* width: 100%; */
+}
+.block_current_friend:hover {
+  filter: drop-shadow(0 0 5px #ff3355);
+}
+.block_current_friend:active {
+  scale: 0.95;
+}
+.block_current_friend svg {
+  margin-right: 5px;
+  font-size: 1.8rem;
+}
+
+.current_friend_block p {
+  text-transform: capitalize;
+  width: 80%;
+  font-size: 1.4rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.unblock_current_friend {
+  color: #1ce14e;
+}
+
+.unblock_current_friend:hover {
+  filter: drop-shadow(0 0 5px #1ce14e) !important;
+}
+
+@media (max-width: 1440px) {
+  .current_friend_info h1 {
+    font-size: 1.5rem;
+  }
+  .current_friend_avatar {
+    width: 150px;
+    height: 150px;
+  }
+  .current_friend_rank_badge {
+    width: 90px;
+    height: 90px;
+  }
+  .current_friend_achievement_badge {
+    width: 65px;
+    height: 65px;
+  }
+}
+@media (max-width: 1024px) {
+  .current_friend_info h1 {
+    font-size: 1.8rem;
+  }
+  .current_friend_avatar {
+    width: 120px;
+    height: 120px;
+  }
+  .current_friend_rank_badge {
+    width: 70px;
+    height: 70px;
+  }
+  .current_friend_achievement_badge {
+    width: 65px;
+    height: 65px;
+  }
+}
+@media (max-width: 768px) {
+  .current_friend_rank_badge {
+    width: 80px;
+    height: 80px;
+  }
+  /* .current_friend_achievement_badge {
+    width: 65px;
+    height: 65px;
+  } */
+}
+
+@media (max-width: 425px) {
+  .current_friend_info h1 {
+    font-size: 1.6rem;
+  }
+  .current_friend_achievement_badge {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media (max-width: 375px) {
+  .current_friend_info h1:hover {
+    text-wrap: wrap;
+  }
+  .current_friend_achievement span:hover {
+    text-wrap: wrap;
+  }
+  .current_friend_block p:hover {
+    text-wrap: wrap;
+  }
+}

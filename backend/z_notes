@@ -1,0 +1,31 @@
+So first things first we 
+
+* install prisma and get shema generated [shema or prisma.shema is default file for config and it contains the models]
+npm i prisma --save-dev
+
+* init our project with prisma  [we use npx to execute prisma cli commands]
+npx prisma init
+
+* Creating models
+ @unique --> throw an error if it is duplicated;
+ @updatedAt --> ???
+
+* migrate prisma models .. to real db [SEE created tables]
+npx prisma migrate dev [generate sql file ??]
+npx prisma migrate push 
+npx prisma migrate deploy
+
+what is _prisma_migrations table ??
+
+<!-- Interaction with db -->
+* adding database module that connect to prisma using Prisma Client, and connect to db $connect
+
+* adding the products module that will be a Rest API [generate res]
+
+* remove the dto & entities [already created by prisma "Prisma.ProductCreatInput"]
+
+* why do we use the export in database.module and @Global()
+and what is ProductCreatInput and ProductUpdateInput ??
+
+* Adding relations btw Product and Description
+  product Product @relation(fields: [productId], references: [id]) ??

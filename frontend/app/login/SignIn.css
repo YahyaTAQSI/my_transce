@@ -1,0 +1,435 @@
+.sign_in_container {
+  width: 100%;
+  height: 55%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.from_errors {
+  font-weight: 900;
+
+  animation: shake 0.5s ease-in-out;
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.sign_in_container h1 {
+  font-size: 25px;
+  font-weight: 300;
+}
+.password_wraper {
+  width: 95%;
+  height: 16%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.sign_in_ships {
+  transition: all 0.4s;
+  border-radius: 5px;
+  padding: 10px;
+  width: 95%;
+  height: 16%;
+  text-align: left;
+  color: #e6e6e6;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: #27272a;
+
+  outline: none;
+  border: none;
+  overflow: hidden;
+  background-size: -500% -100%;
+}
+.change_pass_bg {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.9), #27272a);
+  background-size: 500% 100%;
+  background-position: right;
+}
+.sign_in_ships::placeholder {
+  color: rgba(255, 255, 255, 0.2) !important;
+}
+.for_pass_only {
+  padding-right: 55px;
+  width: 100%;
+  height: 100%;
+}
+.hide_pass {
+  height: 0 !important;
+  width: 0;
+  font-size: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.hide_password_text {
+  transition: all 0.4s;
+  cursor: pointer;
+  position: absolute;
+  font-size: 30px;
+  right: 10px;
+
+  border-radius: 50%;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0px 15px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.hide_password_text path {
+  transition: all 0.4s;
+  stroke-width: 5px;
+}
+
+.show_password_text {
+  rotate: -90deg;
+  filter: drop-shadow(0 0 10px rgb(255, 255, 255)) !important;
+}
+.show_password_text path {
+  stroke-width: 30px;
+}
+.two_factor_auth {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+._2fa_container {
+  height: 80%;
+}
+._2fa_header {
+  font-size: 1.2rem !important;
+  font-weight: 800 !important;
+  text-align: center;
+}
+._2fa_container_separator {
+  color: transparent;
+}
+
+.show_2fa_container {
+  width: 95%;
+  height: fit-content;
+  padding: 10px 0;
+}
+
+._2fa_container_inputs {
+  width: calc(100% / 6) !important;
+  background-color: #27272a;
+  outline: none;
+  border: none;
+  user-select: none;
+  height: 70%;
+  font-size: 24px;
+  border-radius: 5px;
+  color: white;
+}
+
+._2fa_container_inputs::-webkit-inner-spin-button,
+._2fa_container_inputs::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  user-select: none;
+}
+
+.sign_in_ships::placeholder {
+  text-transform: uppercase;
+  color: white;
+}
+.btn_container {
+  width: 95%;
+  height: 16%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.btn {
+  text-transform: capitalize;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1ce14e;
+  font-size: 20px;
+  height: 100%;
+  flex: 3;
+}
+.cancel_opt {
+  cursor: pointer;
+  font-size: 1.1rem;
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin-right: 0;
+  border-radius: 5px;
+  display: grid;
+  place-content: center;
+  font-weight: 900;
+  text-transform: capitalize;
+  background: var(--main-red);
+  overflow: hidden;
+}
+.show_cancel_opt {
+  height: 100%;
+  flex: 1;
+  margin-right: 15px;
+}
+
+.lets_not_play {
+  background-color: var(--main-red);
+}
+.btn svg {
+  font-size: 30px;
+  animation: rightSignal 3s ease-in-out 2s infinite alternate;
+}
+.btn svg:hover {
+  animation-play-state: paused;
+}
+
+.outher_methods {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.other_login {
+  transition: all 0.4s;
+  cursor: pointer;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  background: #27272a;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  width: 45%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.other_login:active,
+button.sign_in_ships:active {
+  scale: 0.95;
+}
+
+@keyframes rightSignal {
+  0% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(-5px);
+  }
+}
+
+@media (max-width: 425px) {
+  .outher_methods {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 25%;
+  }
+  .other_login {
+    height: 45%;
+  }
+  .show_2fa_container {
+    height: 40%;
+  }
+  ._2fa_container {
+    height: 40%;
+  }
+  ._2fa_header {
+    font-size: 1rem !important;
+  }
+}
+
+/* --------------------------------------eye */
+
+.eye_container {
+  position: absolute;
+  right: 5px;
+}
+
+.eye {
+  cursor: pointer;
+  --box-size: 20px;
+  --border-width: calc(var(--box-size) / 12);
+  --hair-length: calc(var(--border-width) * 2);
+  --iris-scale: 80%;
+  --pupil-scale: 35%;
+  --tansition-time: 0.15s;
+
+  width: var(--box-size);
+  height: var(--box-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.7);
+}
+.hide_eye {
+  --box-size: 0px;
+}
+
+.eye__base {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: solid var(--border-width) white;
+  border-radius: 80% 0;
+  transform: rotate(45deg);
+  overflow: hidden;
+}
+
+.eye__base__view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transform: translate(15%, 20%);
+  transition: transform calc(var(--tansition-time) * 1.5) ease-out;
+}
+
+.eye[data-closed] .eye__base__view {
+  transform: translate(3%, 3%);
+}
+
+.eye__base__view__iris {
+  width: var(--iris-scale);
+  height: var(--iris-scale);
+  border: solid var(--border-width) white;
+  border-radius: 100%;
+  transform: rotate(-45deg);
+}
+
+.eye__base__view__pupil {
+  position: absolute;
+  width: var(--pupil-scale);
+  height: var(--pupil-scale);
+  border: solid var(--border-width) white;
+  border-radius: 100%;
+  transform: rotate(-45deg);
+}
+
+.eye__lid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.eye__lid__mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 80% 0;
+  transform: rotate(45deg);
+  transition: all var(--tansition-time) ease-out;
+}
+
+.eye[data-closed] .eye__lid__mask {
+  background: transparent;
+  transform: rotate(45deg) translate(-20%, -20%);
+}
+
+.eye__lid__lashes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform var(--tansition-time) ease-out;
+}
+
+.eye[data-closed] .eye__lid__lashes {
+  transform: rotateX(180deg);
+}
+
+.eye__lid__lashes__line {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-bottom: solid var(--border-width) white;
+  border-right: solid var(--border-width) white;
+  border-radius: 80% 0;
+  transform: rotate(45deg);
+}
+
+.eye__lid__lashes__hair {
+  position: absolute;
+  left: 50%;
+  top: 105%;
+  transform: translate(-50%, -50%);
+  width: var(--border-width);
+  height: var(--hair-length);
+  background: white;
+}
+
+.eye__lid__lashes__hair:before {
+  content: "";
+  position: absolute;
+  left: calc(var(--box-size) * -0.4);
+  top: calc(var(--box-size) * -0.07);
+  width: var(--border-width);
+  height: var(--hair-length);
+  background: white;
+  transform: rotate(20deg);
+}
+
+.eye__lid__lashes__hair:after {
+  content: "";
+  position: absolute;
+  left: calc(var(--box-size) * 0.4);
+  top: calc(var(--box-size) * -0.07);
+  width: var(--border-width);
+  height: var(--hair-length);
+  background: white;
+  transform: rotate(-20deg);
+}
+
+@media (max-width: 425px) {
+  .from_errors {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+  .sign_in_container {
+    padding: 0;
+  }
+  .sign_in_container > input {
+    height: 13%;
+  }
+  .other_login {
+    width: 100%;
+  }
+}
+
+@media (max-width: 375px) {
+  .btn {
+    flex: 1;
+  }
+}

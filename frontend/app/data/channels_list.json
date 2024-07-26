@@ -1,0 +1,226 @@
+[
+  {
+    "avatar": "/aljazera.png",
+    "channel_id": 512542,
+    "channel_name": "aljazira alarabia",
+    "members_number": 22,
+    "topic": "this channel about all arabic news",
+    "lastmsg": "great",
+    "members": [
+      {
+        "id": 78451200,
+        "type": "admin",
+        "name": "yahya_Taqsi",
+        "avatar": "/avatar1.png"
+      },
+      {
+        "id": 1645589456,
+        "type": "owner",
+        "name": "yassine El",
+        "avatar": "/avatar2.png"
+      },
+      {
+        "id": 78451294,
+        "type": "admin",
+        "name": "ayoub",
+        "avatar": "/avatar3.png"
+      },
+      {
+        "id": 78477294,
+        "type": "user",
+        "name": "mimoun",
+        "avatar": "/avatar4.png"
+      },
+      {
+        "id": 78422294,
+        "type": "user",
+        "name": "fakhita",
+        "avatar": "/avatar5.png"
+      },
+      {
+        "id": 78411294,
+        "type": "user",
+        "name": "lmekhtar",
+        "avatar": "/avatar-for-store.png"
+      }
+    ],
+    "messages": [
+      {
+        "id": 73737357357,
+        "time": 135498451685,
+        "msg": "hello iuhdfkv erljgcmx [iprks'vx/c , [ipksv/l ,xcpo ;jdsv;dosjm poj;rgmedfv[kdf [prskv ",
+        "recipient": true,
+        "avatar": "/avatar1.png"
+      },
+      {
+        "id": 7357737357,
+        "time": 135498451686,
+        "msg": "how are you",
+        "recipient": false,
+        "avatar": "/avatar2.png"
+      },
+      {
+        "id": 73737357357,
+        "time": 135498451687,
+        "msg": "im good",
+        "recipient": true,
+        "avatar": "/avatar3.png"
+      },
+      {
+        "id": 37741073573,
+        "time": 135498451688,
+        "msg": "great",
+        "recipient": false,
+        "avatar": "/avatar4.png"
+      },
+      {
+        "id": 3320773573,
+        "time": 135498441688,
+        "msg": "great",
+        "recipient": false,
+        "avatar": "/avatar4.png"
+      },
+      {
+        "id": 3779513573,
+        "time": 13544498451688,
+        "msg": "great",
+        "recipient": false,
+        "avatar": "/avatar4.png"
+      },
+      {
+        "id": 3773741573,
+        "time": 13549845168448,
+        "msg": "great",
+        "recipient": false,
+        "avatar": "/avatar4.png"
+      },
+      {
+        "id": 3773573213,
+        "time": 4135498451688,
+        "msg": "great",
+        "recipient": false,
+        "avatar": "/avatar4.png"
+      },
+      {
+        "id": 377374573,
+        "time": 13549845168811,
+        "msg": "great",
+        "recipient": false,
+        "avatar": "/avatar4.png"
+      },
+      {
+        "id": 377143573,
+        "time": 13549845122688,
+        "msg": "great",
+        "recipient": false,
+        "avatar": "/avatar4.png"
+      },
+      {
+        "id": 377353273,
+        "time": 13549845331688,
+        "msg": "great",
+        "recipient": false,
+        "avatar": "/avatar4.png"
+      },
+      {
+        "id": 377359673,
+        "time": 13549845177688,
+        "msg": "great",
+        "recipient": false,
+        "avatar": "/avatar4.png"
+      },
+      {
+        "id": 377385573,
+        "time": 1354984516222288,
+        "msg": "great",
+        "recipient": false,
+        "avatar": "/avatar4.png"
+      },
+      {
+        "id": 377357743,
+        "time": 135498455451688,
+        "msg": "great",
+        "recipient": false,
+        "avatar": "/avatar4.png"
+      },
+      {
+        "id": 377357743,
+        "time": 135498466651688,
+        "msg": "great",
+        "recipient": false,
+        "avatar": "/avatar4.png"
+      },
+      {
+        "id": 377357743,
+        "time": 13549899451688,
+        "msg": "great",
+        "recipient": false,
+        "avatar": "/avatar4.png"
+      }
+    ]
+  },
+  {
+    "avatar": "/arriadia.png",
+    "channel_id": 5125474,
+    "channel_name": "arriadia",
+    "members_number": 250,
+    "topic": "this channel about sport and matches",
+    "lastmsg": "wassup",
+    "members": [
+      {
+        "id": 1645589456,
+        "type": "admin",
+        "name": "yassine",
+        "avatar": "/avatar2.png"
+      },
+      {
+        "id": 78444294,
+        "type": "owner",
+        "name": "yahya",
+        "avatar": "/avatar1.png"
+      },
+      {
+        "id": 78433294,
+        "type": "user",
+        "name": "ayoub",
+        "avatar": "/avatar3.png"
+      },
+      {
+        "id": 784889294,
+        "type": "user",
+        "name": "mimoun",
+        "avatar": "/avatar4.png"
+      }
+    ],
+    "messages": [
+      {
+        "id": 7373735737,
+        "time": 13549845558,
+        "msg": "hello uykdfhjvcn khfdjnv l henrikldfvx  ifhljvknxpsdo;jv slhv",
+        "recipient": true,
+        "avatar": "/avatar2.png"
+      },
+      {
+        "id": 37735737357,
+        "time": 13549847768,
+        "msg": "how are you",
+        "recipient": false,
+        "avatar": "/avatar1.png"
+      },
+      {
+        "id": 96373757357,
+        "time": 13549995168,
+        "msg": "heeey",
+        "recipient": true,
+        "avatar": "/avatar3.png"
+      },
+      {
+        "id": 254773573,
+        "time": 135339845168,
+        "msg": "wassup",
+        "recipient": false,
+        "avatar": "/avatar4.png"
+      }
+    ]
+  }
+]

@@ -1,0 +1,30 @@
+you can replace connect with create if you wanna create an achievement that does not exist in db;
+
+{
+    "status": "online",
+    "username": "yahya",
+    "email": "yahya@gmail.com",
+    "bio": "someone who likes software",
+    "password": "yahya1234",
+    "twoFA": true,
+    "choosedProfileImage": "/av/av1.png",
+    "choosedBanner": "/Xarben_bear.png",
+    "level": 0,
+    "points": 0,
+    "rank": "0",
+    "win": 0,
+    "lose": 0,
+    "achievements": {
+        "create": [
+            {
+                "achievement": {
+                    "connect": {
+                        "id": 1
+                    }
+                },
+                "unlocked": false,
+                "choosed": false
+            }
+        ]
+    }
+}

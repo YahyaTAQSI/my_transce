@@ -1,0 +1,68 @@
+{
+    "uid": 1,
+    "status": "online",
+    "username": "yassine el hajjami",
+    "email": "yassine@gmail.com",
+    "bio": "someone who like software :) !",
+    "password": "yassine1234",
+    "twoFA": true,
+    "choosedProfileImage": "/av/av1.png",
+    "choosedBanner": "/Xarben_bear.png",
+    "level": 0,
+    "points": 0,
+    "rank": "0",
+    "win": 0,
+    "lose": 0,
+    "achievements": [
+        {
+            "name": "Precision Paddler",
+            "description": "Win a single match with a perfect score, never missing a shot.",
+            "uri": "/Precision_Paddler.png",
+            "date": "2024-03-20T15:21:08.527Z",
+            "unlocked": false,
+            "choosed": false
+        },
+        {
+            "name": "Flawless Victory",
+            "description": "Win a single match without letting your opponent score a single point.",
+            "uri": "/flawless.jpeg",
+            "date": "2024-03-20T15:21:13.498Z",
+            "unlocked": false,
+            "choosed": false
+        }
+    ],
+    "avatarsAndPaddles": [
+        {
+            "id": 1,
+            "avatar": "avatar1.png",
+            "name": "super hero",
+            "description": "Designed to broaden your playing horizons with an extended width, granting players an Increased Width: 15%.",
+            "price": 720,
+            "unlocked": false,
+            "power": "",
+            "choosed": false
+        },
+        {
+            "id": 2,
+            "paddle": "green-paddle.png",
+            "name": "ZENITH",
+            "description": "Designed to broaden your playing horizons with an extended width, granting players an Increased Width: 15%.",
+            "price": 500,
+            "unlocked": false,
+            "power": "+ 5% ball speed",
+            "choosed": false
+        }
+    ],
+    "friends": [
+        {
+            "userId": 1,
+            "friendId": 2,
+            "status": "ACCEPTED"
+        }
+    ],
+    "friendsWithMe": []
+}
+
+
+
+

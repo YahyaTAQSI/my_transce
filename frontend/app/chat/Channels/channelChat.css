@@ -1,0 +1,644 @@
+* {
+  transition: 0.3s;
+}
+.searchingArea {
+  height: 500px;
+}
+.channelLink .nameAndCode {
+  transition: 0.3s;
+}
+.channelLink .nameAndCode input {
+  display: none;
+  opacity: 0;
+  transition: 0.3s;
+  text-align: center;
+}
+.channelLink:hover .nameAndCode input {
+  display: block;
+  opacity: 1;
+}
+/* Three dots's background */
+/* muting time */
+.searchingArea .errorMsg {
+  position: absolute;
+  top: 5%;
+  color: tomato;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  background: #dfdfdf;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+.channelsListContainer {
+  height: 100%;
+  position: relative;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+.addChannelBtn,
+.searchChannelBtn {
+  position: absolute;
+
+  right: 10px;
+  bottom: 0;
+  z-index: 2;
+  cursor: pointer;
+  font-size: 30px;
+  background-color: #1ccc48;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+.searchChannelBtn {
+  right: 60px;
+}
+.searchingChannelInput {
+  padding: 15px;
+  background: #2d2d31;
+  border: none;
+  width: 100%;
+  font-size: 18px;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.362);
+  outline: none;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.searchedChannelsList {
+  width: 100%;
+  height: 80%;
+  background: #36363a;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow-y: scroll;
+}
+.addChannelBtn:hover,
+.searchChannelBtn:hover {
+  background-color: #10a936;
+}
+.addChannelBtn:active,
+.searchChannelBtn:active {
+  scale: 0.95;
+}
+.channelsListContainer .channelContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  cursor: pointer;
+  padding: 10px;
+}
+.channelsListContainer .channelContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  z-index: -1;
+  background: linear-gradient(to right, #1ce14e -50%, rgba(255, 255, 255, 0));
+  transition: 0.3s;
+}
+.channelsListContainer .channelContainer:hover::before {
+  width: 100%;
+}
+.channelsListContainer .channelContainer .imageContainer {
+  border-radius: 60%;
+}
+.channelsListContainer .channelContainer .channelImage {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+.channelsListContainer .channelContainer .name_lastmsg {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.channelsListContainer .channelContainer .name_lastmsg p {
+  font-size: 22px;
+  font-weight: 900;
+}
+.channelsListContainer .channelContainer .name_lastmsg span {
+  color: rgb(203, 203, 203);
+}
+
+@media (max-width: 1440px) {
+  .channelsListContainer .channelContainer .name_lastmsg p {
+    font-size: 20px;
+  }
+  .channelsListContainer .channelContainer .channelImage {
+    width: 70px;
+    height: 70px;
+  }
+  .searchingArea {
+    height: 400px;
+  }
+}
+@media (max-width: 1024px) {
+  .channelsListContainer .channelContainer .channelImage {
+    width: 60px;
+    height: 60px;
+  }
+}
+@media (max-width: 725px) {
+  .channelsListContainer .channelContainer .channelImage {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media (max-width: 425px) {
+  .searchingArea {
+    height: 350px;
+  }
+}
+/* -------selectedChannelChat---------*/
+.channel_msg_section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.channel_msg_section .mutedMsg {
+  position: absolute;
+  bottom: 13%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: tomato;
+  transition: all 0.3s;
+  text-align: center;
+  display: none;
+  line-height: 1.6;
+}
+.channel_msg_section_header {
+  height: 60px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  gap: 10px;
+  background: #2d2d31;
+}
+.channel_msg_section_header .searchFriendsInPrivateMode {
+  font-size: 25px;
+  margin-right: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.channel_msg_section_header .searchFriendsInPrivateMode:hover {
+  color: #1ce14e;
+}
+.channel_msg_section_header .searchFriendsInPrivateMode:active {
+  scale: 0.9;
+}
+.channel_msg_section_header div {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+.channel_msg_section_header_avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+/*--------start chat-------*/
+
+.channel_msg_section_chat {
+  padding: 0 10px;
+  flex: 1;
+  /* background: rgba(255, 255, 255, 0.17);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.8px);
+  -webkit-backdrop-filter: blur(7.8px); */
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  scrollbar-width: 0px;
+  scroll-behavior: smooth;
+}
+.channel_msg_section_chat .channelMsgContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: start;
+  padding-bottom: 10px;
+}
+.channel_msg_section_chat .channelMsgContainerRecipient {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 5px;
+  padding-bottom: 10px;
+}
+.channel_msg_section_chat .senderOrRecieverImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.channel_msg_section_chat .msgAndTime {
+  padding: 8px 10px;
+  background: #25262b;
+  border-radius: 10px;
+  max-width: 80%;
+}
+.channel_msg_section_chat .msgAndTime .msgTime {
+  font-size: 12px;
+  color: rgba(250, 250, 250, 0.71);
+  margin-top: 5%;
+}
+
+/*--------end chat-------*/
+
+.channel_msg_section_input {
+  display: flex;
+  align-items: center;
+  background-color: #2d2d31;
+  padding: 20px;
+  height: 60px;
+}
+.channel_msg_section_input input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+}
+.channel_msg_section_input .sendIcon {
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.channel_msg_section_input .sendIcon:hover {
+  scale: 1.2;
+}
+.channel_msg_section_input .sendIcon:active {
+  scale: 0.9;
+}
+@media (max-width: 425px) {
+  .chat_channels_container {
+    width: 100%;
+  }
+  .channel_msg_section_header {
+    padding: 10px 10px 10px 1px;
+  }
+}
+
+/*-------------selectedChannelData------------*/
+
+.selectedChannelData {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.selectedChannelData .ChannelImage {
+  width: 100px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.selectedChannelData .channelName {
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+.selectedChannelData .topic {
+  color: rgb(207, 207, 207);
+  margin-bottom: 40px;
+}
+.selectedChannelData .members {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.176);
+  border-radius: 10px;
+  padding: 5px;
+  height: 50%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: 2px;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: transparent;
+}
+.selectedChannelData .members .imageNameContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.selectedChannelData .members .owner,
+.selectedChannelData .members .admin,
+.selectedChannelData .members .user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 5px 0;
+  position: relative;
+
+  /* border-bottom: 0.5px solid rgba(232, 232, 232, 0.376); */
+}
+.selectedChannelData .members .owner::before,
+.selectedChannelData .members .admin::before,
+.selectedChannelData .members .user::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(to right, #00ff407e, rgba(47, 44, 44, 0));
+  z-index: -1;
+  transition: 0.3s;
+}
+.selectedChannelData .members .owner:hover::before,
+.selectedChannelData .members .admin:hover::before,
+.selectedChannelData .members .user:hover::before {
+  width: 100%;
+}
+
+.selectedChannelData .members .owner .userPic .pic,
+.selectedChannelData .members .admin .userPic .pic,
+.selectedChannelData .members .user .userPic .pic {
+  width: 50px;
+  border-radius: 50%;
+}
+.selectedChannelData .members .owner .name,
+.selectedChannelData .members .admin .name,
+.selectedChannelData .members .user .name {
+  text-transform: capitalize;
+  flex: 1;
+}
+.selectedChannelData .members .owner .name:hover,
+.selectedChannelData .members .admin .name:hover,
+.selectedChannelData .members .user .name:hover {
+  color: #99e8ad;
+}
+.selectedChannelData .members .owner .status .type,
+.selectedChannelData .members .admin .status .type,
+.selectedChannelData .members .user .status .type {
+  background-color: #1ccc48;
+  padding: 4px;
+  border-radius: 5px;
+  flex-shrink: 1;
+}
+.selectedChannelData .members .owner .status,
+.selectedChannelData .members .admin .status,
+.selectedChannelData .members .user .status {
+  display: flex;
+  align-items: center;
+}
+
+.selectedChannelData .members .owner .status .actionsBtn,
+.selectedChannelData .members .admin .status .actionsBtn,
+.selectedChannelData .members .user .actionsBtn {
+  z-index: 10;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+.selectedChannelData .members .owner .status .actionsBtn .btn:active,
+.selectedChannelData .members .admin .status .actionsBtn .btn:active,
+.selectedChannelData .members .user .actionsBtn .btn:active {
+  scale: 0.9;
+}
+.selectedChannelData .members .owner .status .actionsBtn .actions,
+.selectedChannelData .members .admin .status .actionsBtn .actions,
+.selectedChannelData .members .user .actionsBtn .actions {
+  position: absolute;
+  width: 120px;
+  text-align: left;
+  padding: 10px;
+  border-radius: 10px;
+  line-height: 1.8;
+  background-color: #059b2ae0;
+  right: 10px;
+  top: -10px;
+  font-weight: 600;
+  z-index: 20;
+  transform: translateX(110%);
+  opacity: 0;
+  transition: 0.3s;
+}
+.selectedChannelData .members .owner .status .actionsBtn:hover .actions,
+.selectedChannelData .members .admin .status .actionsBtn:hover .actions,
+.selectedChannelData .members .user .actionsBtn:hover .actions {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.selectedChannelData .members .owner .status .actionsBtn .actions ul,
+.selectedChannelData .members .admin .status .actionsBtn .actions ul,
+.selectedChannelData .members .user .actionsBtn .actions ul {
+  list-style: none;
+}
+
+.selectedChannelData .members .owner .status .actionsBtn .actions ul li:active,
+.selectedChannelData .members .admin .status .actionsBtn .actions ul li:active,
+.selectedChannelData .members .user .actionsBtn .actions ul li:active {
+  scale: 0.95;
+}
+.selectedChannelData .leaveBtn {
+  flex: 1;
+  display: flex;
+  align-items: end;
+  text-align: left;
+  gap: 10px;
+}
+.selectedChannelData .leaveBtn p {
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.3s;
+}
+.selectedChannelData .leaveBtn p:hover {
+  color: #c53a3a;
+}
+
+.selectedChannelData .leaveBtn .cancelBtn {
+  cursor: pointer;
+  font-size: 25px;
+  color: #c53a3a;
+}
+
+.selectedChannelData .leaveBtn p:active,
+.selectedChannelData .leaveBtn .cancelBtn:active {
+  scale: 0.9;
+}
+
+/*-------------create channel----------------*/
+
+.popupContainer input[type="file"] {
+  display: none;
+}
+.custom-file-input {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #070c08;
+  color: #070c08;
+  z-index: 852;
+}
+.errorMsg {
+  display: block;
+  text-align: right;
+  font-size: 14px;
+  padding: 0 0 5px;
+  color: tomato;
+}
+/*----------------end channel----------------*/
+.protectedPassword {
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background: #36363a;
+  font-size: 16px;
+  transition: all 0.3s;
+  color: white;
+}
+.protectedPassword::placeholder {
+  color: rgb(230, 230, 230);
+}
+
+.channelLink {
+  text-align: left;
+  padding: 15px;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.231);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.channelLink .imageAndName {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.channelLink:hover {
+  background-color: #303033;
+}
+.channelImage {
+  border-radius: 50%;
+}
+.joinBtn {
+  text-align: right;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  color: white;
+  background-color: #1ccc48;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.joinBtn:hover {
+  background-color: #10a936;
+}
+.channelLink input {
+  padding: 5px;
+  width: 100px;
+  border: 0.5px solid rgba(255, 255, 255, 0.74);
+  outline: none;
+  border-radius: 5px;
+  background-color: transparent;
+  color: white;
+  font-size: 17px;
+}
+.channelLink p {
+  padding: 5px;
+}
+/*-------*/
+.PopUpSearchFriend {
+  padding: 20px;
+  height: 100%;
+  background: #e0e0e013;
+}
+.PopUpSearchFriend .searchingArea {
+  text-align: center;
+  padding: 10px;
+  height: 100%;
+}
+.PopUpSearchFriend .searchingArea input {
+  background: #2d2e33;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 18px;
+  color: white;
+  border-radius: 5px;
+  width: 80%;
+}
+.PopUpSearchFriend .searchingArea .searchedFriendsList {
+  background: #2d2e33;
+  height: 80%;
+  margin: 20px 0;
+  border-radius: 20px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+.PopUpSearchFriend .searchingArea .searchedFriendsList div {
+  padding: 20px;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.159);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.PopUpSearchFriend .searchingArea .searchedFriendsList div .imageAndusername {
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 0;
+  gap: 10px;
+}
+.PopUpSearchFriend .searchingArea .searchedFriendsList div button {
+  padding: 10px;
+  color: white;
+  background: #1ce14e;
+  border-radius: 5px;
+  font-size: 17px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.PopUpSearchFriend .searchingArea .searchedFriendsList div button:hover {
+  background: #10a936;
+}
+.PopUpSearchFriend .searchingArea .searchedFriendsList div button:active {
+  scale: 0.9;
+}
+.PopUpSearchFriend .exitBtn {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .PopUpSearchFriend {
+    padding: 5px;
+  }
+  .PopUpSearchFriend .searchingArea .searchedFriendsList div {
+    padding: 5px;
+    justify-content: space-between;
+  }
+}

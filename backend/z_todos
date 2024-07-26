@@ -1,0 +1,10 @@
+* create database;
+* rejester first user in db;
+* fetch and store image
+* passport in signIn
+----------------------------
+
+* Definition Bearer token: anyone with that token and could use it => can get the data from any route
+* implement logout
+* implement 42 login
+* implement routes

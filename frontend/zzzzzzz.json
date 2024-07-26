@@ -1,0 +1,32 @@
+// User 1
+
+{
+    "username": "test123",
+    "password": "test1234"
+}
+
+// User 2
+
+{
+    "username": "yassine",
+    "password": "yassine1234",
+    "email": "yassine@mail.com"
+}
+
+
+// auth/signup
+{
+    "message": [
+        "email must be an email"
+    ],
+    "error": "Bad Request",
+    "statusCode": 400
+}
+
+
+// auth/login
+{
+    "message": "Invalid Username",
+    "error": "Unauthorized",
+    "statusCode": 401
+}

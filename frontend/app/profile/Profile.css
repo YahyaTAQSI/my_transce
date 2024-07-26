@@ -1,0 +1,273 @@
+.profile_container {
+  /* padding: 5% 0; */
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.user_account {
+  position: relative;
+  color: white;
+  max-width: 1024px;
+  border-radius: 15px;
+  width: 80%;
+  height: 30%;
+  background: #2d2d31;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 20px;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.user_profile_rank_badge {
+  position: absolute;
+  right: 20px;
+}
+
+.profile_photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid #1ce14e;
+  /* animation: heartbeat 3s infinite 5s ease-in-out; */
+  animation: showUp2 0.5s ease-in-out;
+}
+.profile_photo2 {
+  width: 200px;
+  height: 200px;
+
+  filter: drop-shadow(0 0 50px #1ce14d70);
+  animation: showUp 0.5s ease-in-out;
+}
+
+@keyframes showUp {
+  0% {
+    opacity: 0;
+    scale: 0;
+  }
+  100% {
+    scale: 1;
+    opacity: 1;
+    rotate: 360deg;
+  }
+}
+@keyframes showUp2 {
+  0% {
+    opacity: 0;
+    scale: 0;
+  }
+  100% {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+.img_container_add {
+  position: relative;
+}
+.add_me_if_not {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  font-size: 36px;
+  background-color: var(--main-green);
+  border-radius: 50%;
+  padding: 5px;
+  overflow: visible;
+  transition: 0.4s all;
+}
+.add_me_if_not:hover {
+  scale: 1.05;
+  cursor: pointer;
+  box-shadow: 0 0 5px var(--main-green);
+}
+
+@keyframes heartbeat {
+  0% {
+    box-shadow: 0 0 10px #1ce14e;
+  }
+  50% {
+    box-shadow: 0 0 25px 1px #1ce14e;
+  }
+  100% {
+    box-shadow: 0 0 10px #1ce14e;
+  }
+}
+
+.profile_data {
+  width: 45%;
+
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.profile_data h1 {
+  color: white;
+  margin-right: auto;
+}
+
+.profile_data h4,
+.profile_data h2 {
+  color: #919191;
+}
+
+.edit_label:hover span {
+  opacity: 1;
+  transform: translate(0);
+}
+.edit_label:hover svg {
+  rotate: 180deg;
+}
+
+.edit_label {
+  color: white;
+  cursor: pointer;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  top: 3%;
+  right: 3%;
+}
+
+.edit_label svg {
+  margin-left: 10px;
+  color: #1ce14e;
+  filter: drop-shadow(0 0 5px #1ce14e);
+  transition: all 0.4s;
+}
+
+.edit_label span {
+  text-shadow: 0 0 10px black;
+  transition: all 0.5s;
+  opacity: 0;
+
+  transform: translate(50%, -50%);
+}
+
+.profile_user_lvl {
+}
+.profile_user_lvl:hover {
+  cursor: pointer;
+}
+
+.profile_progress {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  text-shadow: 0 0 10px white;
+}
+
+.profile_uid {
+  text-align: right;
+  width: 50%;
+  cursor: pointer;
+  text-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.profile_username {
+  display: flex;
+  align-items: center;
+}
+.profile_username svg {
+  margin-right: 10px;
+}
+
+.profile_uid svg {
+  margin-left: 10px;
+}
+.profile_uid svg:hover {
+  filter: drop-shadow(0 0 5px #1ce14e);
+  color: #1ce14e;
+}
+
+.progress {
+  border-radius: 10px;
+  position: relative;
+  width: 70%;
+  height: 20px;
+  background: #868686;
+  display: flex;
+  margin-right: 5px;
+}
+.pseudoProgress {
+  overflow: hidden;
+  padding: 0;
+  border-radius: 10px;
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #1ce14e;
+  box-shadow: 0 0 10px #1ce14e;
+}
+
+.profile_details {
+  max-width: 1024px;
+  width: 80%;
+  height: 60%;
+}
+
+@media (max-width: 768px) {
+  .user_account {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .profile_details {
+    width: 100%;
+  }
+}
+@media (max-width: 425px) {
+  .user_account {
+    height: 40%;
+    flex-direction: column;
+
+    /* justify-content: space-around; */
+  }
+  .profile_data {
+    width: 100%;
+    text-align: center !important;
+  }
+  .profile_data > * {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .profile_details {
+    height: 55%;
+  }
+  .profile_photo,
+  .profile_photo2 {
+    width: 120px;
+    height: 120px;
+    border-width: 2px;
+  }
+  .profile_data * {
+    font-size: 1rem;
+    text-shadow: 0 0 10px black;
+  }
+  .profile_progress {
+    width: 100%;
+  }
+}
+@media (max-width: 375px) {
+  /* .profile_data * {
+    font-size: 0.9rem;
+  }
+  .profile_progress {
+    width: 90%;
+    font-size: 0.8rem;
+  } */
+}

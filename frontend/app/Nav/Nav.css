@@ -1,0 +1,181 @@
+.main-Nav {
+  color: white;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  background: #2d2d31a5;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* background: rgba(255, 255, 255, 0.2); */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.link {
+  color: white;
+
+  text-decoration: none;
+}
+
+/* li * {
+  display: flex;
+  align-items: center;
+} */
+
+.main-Nav .logo-and-links,
+.main-Nav .settings-logout {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.main-Nav .logo-and-links .logo .link {
+  display: flex;
+  align-items: center;
+}
+
+.logo-and-links ul li,
+.settings-logout ul li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  list-style: none;
+  text-decoration: none;
+  font-size: 25px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.logo-and-links ul .link:hover li div:last-child,
+.settings-logout ul li:hover div:last-child,
+.settings-logout ul li:hover div:last-child {
+  transition: 0.3s;
+  color: #72ed8b;
+}
+
+.settings-logout ul li {
+  margin-bottom: 10px;
+}
+
+/* line hover effect */
+.logo-and-links ul .link li div:last-child,
+.settings-logout ul li div:last-child {
+  position: relative;
+}
+.logo-and-links ul .link li div:last-child .hover-line,
+.settings-logout ul .link li div:last-child .hover-line {
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #72ed8b;
+  bottom: 0;
+  left: 0;
+}
+.logo-and-links ul .link:hover li div:last-child .hover-line,
+.settings-logout ul .link:hover li div:last-child .hover-line {
+  transition: 0.3s;
+  width: 100%;
+  background-color: #72ed8b;
+  text-shadow: 0 0 5em 0 #1ce14e;
+  box-shadow: 0 0 10px 1px #1ce14e;
+}
+.logo-and-links ul .link:hover li div:last-child,
+.settings-logout ul .link:hover li div:last-child,
+.settings-logout ul li:hover div:last-child {
+  text-shadow: 0 0 0.09em #1ce14e;
+}
+
+@media (max-width: 1440px) {
+  .main-Nav {
+    width: 220px;
+    padding: 10px;
+  }
+  .logo-and-links ul li,
+  .settings-logout ul li {
+    font-size: 25px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    gap: 8px;
+  }
+  .logo-and-links ul li div:first-child,
+  .settings-logout ul li div:first-child {
+    font-size: 25px;
+  }
+  .main-Nav .logo-and-links .image-logo {
+    width: 90px;
+    height: 90px;
+  }
+  .main-Nav .logo-and-links .apb-logo {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-Nav {
+    width: 80px;
+    padding: 10px;
+  }
+  .logo-and-links,
+  .settings-logout {
+    align-items: center;
+  }
+  .logo-and-links ul li div:last-child,
+  .settings-logout ul li div:last-child {
+    display: none;
+  }
+  .logo-and-links ul li div:first-child,
+  .settings-logout ul li div:first-child {
+    font-size: 35px;
+  }
+  .logo-and-links ul li div:first-child:hover {
+    transition: 0.3s ease-out;
+    scale: 1.1;
+  }
+  .logo-and-links ul li div:first-child:active {
+    transition: 0.3s ease-out;
+    scale: 0.9;
+  }
+  .main-Nav .logo-and-links .image-logo {
+    width: 70px;
+    height: 70px;
+  }
+  .main-Nav .logo-and-links .apb-logo {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .main-Nav {
+    width: 60px;
+    padding: 8px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  .main-Nav .logo-and-links .image-logo {
+    width: 60px;
+    height: 60px;
+  }
+}
+@media (max-width: 425px) {
+  .main-Nav {
+    width: 50px;
+    padding: 8px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  .main-Nav .logo-and-links .image-logo {
+    width: 50px;
+    height: 50px;
+  }
+  .settings-logout ul li div:first-child,
+  .logo-and-links ul li div:first-child {
+    font-size: 25px;
+  }
+}

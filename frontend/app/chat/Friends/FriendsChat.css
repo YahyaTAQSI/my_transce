@@ -1,0 +1,20 @@
+.friends_chat_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.friends_chat_container::-webkit-scrollbar-track {
+  background-color: #e0e0e000 !important;
+}
+
+.friends_chat_container::-webkit-scrollbar {
+  width: 3px;
+}
+
+.friends_chat_container::-webkit-scrollbar-thumb {
+  background-color: #4caf50;
+  border-radius: 6px;
+}

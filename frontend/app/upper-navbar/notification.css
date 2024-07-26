@@ -1,0 +1,75 @@
+.notification_container {
+  width: 100%;
+  margin-bottom: 1px;
+  background-color: #181818;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.notification_container:not(:last-child) {
+  margin-bottom: 2px;
+}
+.notification_section {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  font-size: 1.1rem;
+}
+
+.notification_avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.time_ago {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.notification_btns {
+  padding: 5px;
+
+  text-transform: capitalize;
+  outline: none;
+  border: none;
+  margin-right: 5px;
+  border-radius: 5px;
+  background-color: #80808066;
+  color: white;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.notification_btns:active {
+  scale: 0.95;
+}
+
+.notification_btns:first-child {
+  background-color: var(--main-green);
+}
+
+.notification_frind_name {
+  margin-right: 5px;
+  font-weight: 900;
+  text-transform: capitalize;
+}
+@media (max-width: 425px) {
+  .notification_section > p {
+    font-size: 0.9rem;
+  }
+  .notification_frind_name {
+    font-size: 1rem;
+  }
+  .notification_avatar {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 320px) {
+  .notification_frind_name {
+    font-size: 0.8rem;
+  }
+}

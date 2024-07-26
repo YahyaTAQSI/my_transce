@@ -1,0 +1,17 @@
+Patch
+
+{
+    "achievements": {
+        "create": [
+            {
+                "achievement": {
+                    "connect": {
+                        "id": 3
+                    }
+                },
+                "unlocked": false,
+                "choosed": false
+            }
+        ]
+    }
+}

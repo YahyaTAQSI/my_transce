@@ -1,0 +1,244 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+//yassiiiiiiiiiiiiin hhhhhhhhhhhhhhhhhhhhß
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["relationJoins"]
+}
+
+// prisma/schema.prisma
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Status {
+  PENDING
+  ACCEPTED
+  BLOCKED
+  DENIED
+  NONE
+}
+
+enum NotificationType {
+  gameReq
+  friendReq
+  channelReq
+}
+
+enum channelType {
+  DM
+  PUBLIC
+  PRIVATE
+  PROTECTED
+}
+
+//for the chat
+model Channel {
+  id       Int         @id @default(autoincrement())
+  type     channelType @default(DM)
+  name     String
+  topic    String
+  uri      String      @default("http://10.13.10.8:3000/channelDefaultImage.png")
+  // uri      String
+  code     Int         @default(0000)
+  roles    Role[]
+  messages Message[]
+}
+
+model Message {
+  id Int @id @default(autoincrement())
+
+  //user relation
+  users     T_User   @relation(fields: [userID], references: [uid])
+  userID    Int
+  //chnnel relation
+  channels  Channel  @relation(fields: [channelID], references: [id])
+  channelID Int
+  content   String
+  isBlocked Boolean  @default(false)
+  createdAT DateTime @default(now())
+}
+
+enum roles {
+  ADMIN
+  USER
+  OWNER
+}
+
+enum conditions {
+  MUTED
+  BLOCKED
+  NORMAL
+}
+
+model Role {
+  id         Int        @id @default(autoincrement())
+  channels   Channel    @relation(fields: [channelID], references: [id])
+  channelID  Int
+  user       T_User     @relation(fields: [userID], references: [uid])
+  userID     Int
+  blocked    Boolean    @default(false)
+  role       roles      @default(USER)
+  mutedSince DateTime   @default(now())
+  condition  conditions @default(NORMAL)
+  updatedAt  DateTime   @default(now())
+}
+
+enum Ranks {
+  Beginner
+  Intermediate
+  Expert
+  Master
+  Grandmaster
+  Apex
+}
+
+enum UserStatus {
+  online
+  offline
+  ingame
+}
+
+// yalah zednaha
+model T_User {
+  uid      Int        @id @default(autoincrement())
+  status   UserStatus @default(offline)
+  username String     @unique
+  email    String     @unique
+  bio      String     @default("I am a player")
+  password String
+  twoFA    Boolean    @default(false)
+  // avatar   String     @default("http://10.13.10.8:3000/default.png")
+  // paddle   String     @default("http://10.13.10.8:3000/defaultPaddle.png")
+  // banner   String     @default("http://10.13.10.8:3000/defaultBanner.jpg") // neeeeeed to be updated
+  avatar   String
+  paddle   String
+  banner   String
+  wallet   Int        @default(0)
+  xp       Int        @default(0)
+
+  rank             Ranks             @default(Beginner)
+  role             String            @default("User")
+  strategy         String            @default("local")
+  twoFASecret      String            @default("")
+  userItems        UserItem[]
+  usersSendThem    UserFriend[]      @relation("usersSendThem")
+  usersSendMe      UserFriend[]      @relation("usersSendMe")
+  renotifications  Notification[]    @relation("received")
+  senotifications  Notification[]    @relation("sended")
+  userAchievements UserAchievement[]
+  winMatches       MatchHistory[]    @relation("winner")
+  loseMatches      MatchHistory[]    @relation("loser")
+  roles            Role[]
+  messages         Message[]
+}
+
+// Notification of a user  ##########################################################################
+model Notification {
+  id        Int              @id @default(autoincrement())
+  type      NotificationType
+  content   String
+  createdAt DateTime         @default(now())
+  read      Boolean          @default(false)
+  ruser     T_User           @relation("received", fields: [ruserId], references: [uid])
+  ruserId   Int
+  suser     T_User           @relation("sended", fields: [suserId], references: [uid])
+  suserId   Int
+  chnnelId  Int              @default(-1)
+}
+
+// Friends of a user and vise versa ############################################################
+model UserFriend {
+  usersSendThem T_User @relation("usersSendThem", fields: [user1Id], references: [uid])
+  user1Id       Int
+  usersSendMe   T_User @relation("usersSendMe", fields: [user2Id], references: [uid])
+  user2Id       Int
+  status        Status @default(NONE)
+
+  @@id([user1Id, user2Id])
+}
+
+// Item of a user ################################################################################
+// INSERT INTO UserItem(userId, itemId, unlocked, choosed)
+// VALUES (1, 1, true, false);
+// ERROR:  relation "useritem" does not exist
+// LINE 1: INSERT INTO UserItem(userId, itemId, unlocked, choosed)
+
+model Item {
+  id          Int        @id @default(autoincrement())
+  img         String
+  name        String     @unique()
+  description String
+  price       Int
+  // is_avatar   Boolean
+  type        String
+  power       String
+  userItems   UserItem[]
+  color       String     @default("none")
+}
+
+// model UploadImageFromClient {
+//   imageUrl String
+//   userId   Int
+//   user     T_User @relation(fields: [userId], references: [uid])
+
+//   @@id(userId)
+// }
+
+model UserItem {
+  user    T_User  @relation(fields: [userId], references: [uid])
+  userId  Int // relation scalar field (used in the `@relation` attribute above)
+  item    Item    @relation(fields: [itemId], references: [id])
+  itemId  Int // relation scalar field (used in the `@relation` attribute above)
+  // unlocked Boolean
+  choosed Boolean
+
+  @@id([userId, itemId])
+}
+
+// User Achievement  ##########################################################################
+model Achievement {
+  id               Int               @id @default(autoincrement())
+  name             String            @unique
+  description      String
+  uri              String
+  userAchievements UserAchievement[]
+}
+
+model UserAchievement {
+  user           T_User      @relation(fields: [userId], references: [uid])
+  userId         Int
+  achievement    Achievement @relation(fields: [achivementName], references: [name])
+  achivementName String
+  createdAT      DateTime    @default(now())
+  unlocked       Boolean
+
+  @@id([userId, achivementName])
+}
+
+// Match History ##########################################################################
+
+enum GameMode {
+  RANDOM
+  AGAINST_FRIEND
+}
+
+model MatchHistory {
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  winnerUser  T_User   @relation("winner", fields: [winner], references: [uid])
+  winner      Int
+  loserUser   T_User   @relation("loser", fields: [loser], references: [uid])
+  loser       Int
+  winnerScore Int //Minis 0 and Max is 7
+  loserScore  Int //Minis 0 and Max is 7
+  gameMode    GameMode
+  startAt     DateTime @default(now())
+  endAt       DateTime @default(now())
+}

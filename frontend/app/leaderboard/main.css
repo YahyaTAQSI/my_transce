@@ -1,0 +1,306 @@
+/* variables */
+:root {
+  --main-color: #1ce14e;
+  --main-color-background: #262629;
+}
+
+/* Global rules */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  background-color: var(--main-color-background);
+  color: white;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* .container-leaderboard {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+} */
+
+/* @media (max-width: 620px) {
+    .container-leaderboard {
+        padding: 0;
+    }
+} */
+
+/* rank */
+.leaders {
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: center;
+  gap: 50px;
+  align-items: flex-end;
+}
+
+/* Handle images */
+.leaders img {
+  width: 100%;
+  height: 100%;
+}
+
+.leaders .profile > .image {
+  width: 70px;
+}
+.leaders .profile > .image img {
+  border-radius: 50%;
+}
+
+.leaders .profile .detail .image {
+  width: 50px;
+}
+
+.leaders .cup {
+  width: 120px;
+  height: 120px;
+}
+/* box */
+.leaders .box {
+  /* flex: 0.3; */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #2d2d30;
+}
+.leaders .box::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 5px;
+  box-shadow: 0 0 10 #1ce14e, 0 0 20 #1ce14e;
+  background-color: #1ce14e;
+  top: 0;
+  left: 0;
+}
+
+@media (min-width: 1440px) {
+  .leaders > :first-child {
+    height: 300px;
+  }
+}
+@media (max-width: 1024px) {
+  .leaders {
+    justify-content: space-between;
+    gap: 0px;
+  }
+  .leaders .box {
+    width: 30%;
+  }
+}
+
+.leaders > :nth-child(2) {
+  order: -1;
+}
+
+.leaders > :first-child .cup {
+  width: 180px;
+  height: 180px;
+}
+
+.leaders .box > :first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leaders .profile {
+  width: 300px;
+  max-width: calc(100% - 120px);
+  text-align: center;
+  white-space: nowrap; /* Prevent the text from wrapping to a new line */
+  overflow: hidden; /* Hide the overflow text */
+  text-overflow: ellipsis; /* Add ellipsis */
+}
+.leaders .profile h2 {
+  white-space: nowrap; /* Prevent the text from wrapping to a new line */
+  overflow: hidden; /* Hide the overflow text */
+  text-overflow: ellipsis; /* Add ellipsis */
+  margin: 0; /* Remove default margin to prevent overflow caused by margin */
+}
+
+@media (max-width: 1024px) {
+  .leaders .box > :first-child {
+    flex-direction: column;
+  }
+
+  .leaders .profile {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 425px) {
+  .leaders {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .leaders .box {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .leaders > :first-child {
+    order: -1;
+  }
+
+  .leaders .box > :first-child {
+    flex-direction: row;
+  }
+  .leaders .profile .image {
+    width: 50px;
+    height: 50px;
+  }
+  .leaders .profile h2 {
+    font-size: 15px;
+  }
+  .leaders .profile span {
+    font-size: 12px;
+  }
+
+  .leaders .profile {
+    width: 200px;
+  }
+
+  .leaders > :first-child .cup {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.leaders .profile .image {
+  margin: auto;
+}
+/* second stats */
+
+.leaders .stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .leaders .stats div {
+    font-size: 14px;
+  }
+}
+
+/* table */
+
+.scrollable-leaderboard {
+  margin-top: 50px;
+  height: 500px;
+  overflow-y: auto;
+}
+
+@media (max-width: 425px) {
+  .scrollable-leaderboard {
+    height: 350px;
+  }
+}
+
+.scrollable-leaderboard::-webkit-scrollbar {
+  width: 10px; /* Set the width of the scrollbar */
+}
+
+/* Track */
+.scrollable-leaderboard::-webkit-scrollbar-track {
+  background: var(
+    --main-color-background
+  ); /* Background color of the scrollbar track */
+}
+.scrollable-leaderboard::-webkit-scrollbar-thumb {
+  background: var(--main-color); /* Color of the scrollbar handle */
+}
+.rank-leaderboard table {
+  width: 100%;
+  background-color: #2d2d30;
+  border-radius: 20px;
+  border-collapse: collapse;
+  display: table;
+}
+
+.rank-leaderboard table tr:first-child {
+  border-bottom: 1px solid white;
+  padding: 20px;
+}
+
+.rank-leaderboard table th,
+.rank-leaderboard table td {
+  padding: 10px;
+  max-width: 200px;
+  margin: auto;
+}
+
+.rank-leaderboard table td * {
+  max-width: 100%;
+  display: block;
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Ensure content does not overflow the h2 */
+  text-overflow: ellipsis; /* Add ellipsis (...) for overflow text */
+}
+
+.rank-leaderboard table tr td:nth-child(2),
+.rank-leaderboard table tr td:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.rank-leaderboard table tr td:nth-child(2) img,
+.rank-leaderboard table tr td:last-child img {
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+@media (max-width: 1024px) {
+  .rank-leaderboard table tr td:nth-child(2),
+  .rank-leaderboard table tr td:last-child {
+    font-size: 13px;
+  }
+  .rank-leaderboard table tr td:nth-child(2) img,
+  .rank-leaderboard table tr td:last-child img {
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 425px) {
+  .rank-leaderboard table {
+    font-size: 10px;
+  }
+  .rank-leaderboard table tr td:nth-child(2) img,
+  .rank-leaderboard table tr td:last-child img {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}
+
+.rank-leaderboard table td,
+.rank-leaderboard table tr {
+  text-align: center;
+}

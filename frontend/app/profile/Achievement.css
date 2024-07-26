@@ -1,0 +1,76 @@
+.achievement_container {
+  width: 100%;
+  height: 70px;
+  box-shadow: 0 0 5px #000;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  padding: 0 2rem;
+}
+
+.friend_achievement_badge {
+  width: 60px;
+  height: 60px;
+}
+
+.achievement_name {
+  width: 88%;
+}
+.achievement_name h1 {
+  font-size: 1.2rem;
+  padding-bottom: 5px;
+}
+.achievement_name h5 {
+  font-size: 0.75rem;
+  color: gray;
+}
+.achievement_name h4 {
+  font-size: 0.8rem;
+}
+
+.achievement_desc {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.locked_achievement {
+  filter: grayscale(1);
+}
+
+@media (max-width: 1024px) {
+  .achievement_name {
+    width: 80%;
+  }
+}
+
+@media (max-width: 425px) {
+  .achievement_container {
+    height: 100px;
+    padding: 0 0.4rem;
+  }
+  .achievement_name {
+    width: 70%;
+  }
+
+  .achievement_desc {
+    flex-direction: column-reverse;
+    align-items: start;
+    justify-content: center;
+  }
+  .achievement_desc h4 {
+    margin-left: auto;
+  }
+}
+@media (max-width: 375px) {
+  .achievement_container {
+    height: 130px;
+  }
+  .achievement_desc h1 {
+    font-size: 1rem;
+  }
+}

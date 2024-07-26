@@ -1,0 +1,11 @@
+.chat_container {
+  width: 100%;
+  /* margin: 20px 0; */
+}
+
+.chat_todays_date {
+  text-align: center;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 300;
+}

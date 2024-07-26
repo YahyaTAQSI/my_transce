@@ -1,0 +1,623 @@
+.game-container {
+	font-family: "Inter", sans-serif;
+	font-weight: 300;
+	position: relative;
+	margin: 0 auto;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+
+#resign-button {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border: #1ee14e 2px solid;
+	color: white;
+	padding: 5px 15px;
+	border-radius: 10px;
+	font-size: 25px;
+	cursor: pointer;
+	background-color: transparent;
+	transition: all 0.3s;
+	display: none;
+
+	top: -70px;
+	left: 0px;
+}
+#resign-button:hover {
+	border: #c67171 2px solid;
+	box-shadow: 0 0 10px 0 #c67171;
+}
+
+#resign-button img {
+	margin-left: 10px;
+	align-items: center;
+	justify-content: center;
+}
+
+#canvas {
+	/* background-image: url('../../../public/game/tables/table1.png'); */
+	/* background-size: 1000px 500px !important;
+	background-repeat: no-repeat !important;
+	background-size: contain !important;
+	background-position: center !important; */
+	/* rotate the bg */
+	width: 100%;
+	height: 100%;
+}
+
+.canvas-container .info-bar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 60px;
+	padding: 10px;
+	background-color: #696969;
+	border-radius: 20px 20px 0 0;
+}
+
+
+#leftScore,
+#rightScore,
+#versus {
+	font-size: 35px;
+	color: white;
+	font-weight: bold;
+	font-family: sans-serif;
+	justify-self: center;
+}
+
+#versus {
+	padding-left: 50px;
+	padding-right: 50px;
+	font-size: 45px;
+	color: #1ee14e;
+}
+
+.left-player-info,
+.right-player-info {
+	display: flex;
+	align-items: center;
+}
+
+.right-player-info {
+	justify-content: end;
+}
+
+.right-player-info,
+.left-player-info {
+	flex: 1;
+}
+
+.right-player-info span {
+	margin-right: 15px;
+}
+
+.left-player-info span {
+	margin-left: 15px;
+}
+
+.right-player-info span,
+.left-player-info span {
+	font-size: 20px;
+}
+
+.right-player-info img,
+.left-player-info img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+
+.canvas-container {
+	position: relative;
+}
+
+.canvas-container .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+#faceRight,
+#faceLeft {
+	background-color: transparent;
+	color: white;
+	width: 30px;
+	height: 30px;
+}
+#faceLeft {
+	margin-left: 10px;
+}
+
+#faceRight {
+	margin-right: 10px;
+}
+
+.start-game-button {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	padding: 7px 25px;
+	border-radius: 10px;
+	font-size: 30px;
+	cursor: pointer;
+	color: #00ff40;
+
+	border: none;
+	background-color: #52765c;
+	border: #1DCD4A 2px solid;
+	transition: all 0.2s;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.start-game-button:hover {
+	background-color: #3ba757;
+	box-shadow: 0 0 5px 2px #39b459;
+	color: white;
+}
+
+.quit-game-button {
+	position: absolute;
+	left: 50%;
+	top: 70%;
+	transform: translate(-50%, -50%);
+	padding: 2px 50px;
+	border-radius: 5px;
+	font-size: 30px;
+	color: #f62828;
+	background-color: #cb9e9e60; /* here */
+	box-shadow: 0 0 5px 2px #f62828;
+	outline: none;
+	border: none;
+	transition: all 0.3s;
+	cursor: pointer;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.quit-game-button:hover {
+	color: white;
+	box-shadow: 0 0 10px 0 #f52e2e;
+	background-color: #ff00007a;
+	border: #ff0000 2px solid;
+}
+
+#msg {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 25px;
+	color: white;
+	text-align: center;
+	z-index: 100;
+
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.retry-button {
+	left: 50%;
+	top: 70%;
+	display: none;
+}
+
+/* Level Button */
+.level-button-container {
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	transform: translate(-50%, 0%);
+
+	display: flex;
+	flex-direction: column;
+}
+.level-button {
+	cursor: pointer;
+	font-size: 20px;
+	background-color: #52765c;
+	color: #00ff40;
+	padding: 8px 40px;
+	border-radius: 15px;
+	outline: none;
+	border: solid 2px #1DCD4A;
+	margin: 5px 0;
+	transition: all 0.2s;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.level-button:hover {
+	background-color: #3ba757;
+	box-shadow: 0 0 5px 2px #39b459;
+	color: white;
+}
+.control-buttons {
+	display: none;
+}
+.control-buttons #left,
+.control-buttons #right {
+	cursor: pointer;
+}
+
+#score-container {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-right: 15px;
+}
+
+
+
+@media (max-width: 925px) {
+	.start-game-button {
+		font-size: 25px;
+	}
+	.quit-game-button {
+		font-size: 25px;
+		width: 150px;
+		height: 40px;
+		top: 75%;
+	}
+	.level-button {
+		font-size: 18px;
+		width: 150px;
+		height: 45px;
+	}
+	.canvas-container .info-bar {
+		height: 55px;
+	}
+	.canvas-container .info-bar .left-player-info img,
+	.canvas-container .info-bar .right-player-info img {
+		width: 40px;
+		height: 40px;
+	}
+
+	.canvas-container .info-bar .left-player-info span,
+	.canvas-container .info-bar .right-player-info span {
+		font-size: 18px;
+	}
+
+	#resign-button {
+		width: 130px;
+		font-size: 20px;
+		top: -55px;
+	}
+	#resign-button img {
+		width: 15px;
+		height: 15px;
+	}
+
+	#leftScore,
+	#rightScore,
+	#versus {
+		font-size: 30px !important;
+	}
+	#versus {
+		font-size: 38px !important;
+	}
+
+	.overlay {
+		border-top-left-radius: none;
+		border-top-right-radius: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.start-game-button {
+		font-size: 20px;
+		rotate: 90deg;
+		left: 30%;
+		top: 68%;
+		width: 170px;
+		height: 45px;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		z-index: 10;
+	}
+
+	#msg {
+		font-size: 20px;
+		rotate: 90deg;
+		z-index: 9;
+		left: -7%;
+		top: 62%;
+		text-align: center;
+		width: 170px;
+		height: 100px;
+	}
+	.quit-game-button {
+		width: 130px;
+		height: 40px !important;
+		font-size: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 10px;
+		rotate: 90deg;
+		top: 50%;
+		left: 20%;
+		transform: translate(-12%, -50%);
+		z-index: 100;
+	}
+	.level-button-container {
+		rotate: 90deg;
+		top: 48%;
+		transform: translate(-55%, 0%);
+		z-index: 1;
+		width: 130px;
+		height: 150px;
+	}
+	.level-button {
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		font-size: 15px;
+	}
+
+	.game-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: end;
+		align-items: center;
+		width: 100%;
+		height: 65%;
+		margin-left: 7px;
+	}
+	.canvas-container {
+		rotate: -90deg;
+		border-radius: 0;
+		width: 500px;
+		height: 350px;
+	}
+	.canvas-container .info-bar {
+		position: absolute;
+		justify-content: space-between;
+		align-items: center;
+		height: 100%;
+		width: 100%;
+		background-color: transparent;
+		/* z-index: -1; */
+	}
+	.canvas-container .info-bar .left-player-info,
+	.canvas-container .info-bar .right-player-info {
+		position: absolute;
+		rotate: 90deg;
+		background: #696969;
+		border-radius: 10px;
+		width: 300px;
+		height: 50px;
+		justify-content: space-between;
+		padding: 10px;
+	}
+	.canvas-container .info-bar .left-player-info {
+		left: -190px;
+	}
+	.canvas-container .info-bar .right-player-info {
+		right: -190px;
+	}
+	.canvas-container .info-bar .right-player-info span,
+	.canvas-container .info-bar .left-player-info span {
+		font-size: 20px;
+		margin: 0;
+	}
+	.canvas-container .info-bar .left-player-info img,
+	.canvas-container .info-bar .right-player-info img {
+		width: 40px;
+		height: 40px;
+	}
+	.canvas-container .info-bar #leftScore,
+	.canvas-container .info-bar #rightScore,
+	.canvas-container .info-bar #versus {
+		rotate: 90deg;
+		opacity: 0.7;
+	}
+	.canvas-container .info-bar #versus {
+		position: relative;
+	}
+	#score-container {
+		display: none;
+		height: 100%;
+		width: 100%;
+		z-index: 1;
+	}
+
+	#resign-button {
+		top: 145px;
+		left: 530px;
+		width: 150px;
+		rotate: 90deg;
+		border-radius: 100px;
+		border: none;
+		box-shadow: 0 0 5px 2px #1ee14e inset;
+	}
+
+	.control-buttons {
+		/* background: red; */
+		position: absolute;
+		rotate: 90deg;
+		width: 150px;
+		align-items: center;
+		justify-content: space-between;
+		/* opacity: 0; */
+		left: -170px;
+		top: 50%;
+		transform: translate(-15%, 20%);
+		/* padding: 5px 15px; */
+		/* background: red; */
+		border-radius: 100px;
+	}
+	.control-buttons button {
+		width: 50px;
+		border-radius: 50%;
+		font-size: 30px;
+		background-color: transparent;
+		color: #fff;
+		box-shadow: 0 0 5px 2px #1ee14e inset;
+		border: none;
+	}
+}
+
+@media (max-width: 425px) {
+	.game-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: end;
+		align-items: center;
+		height: 65%;
+		margin-left: 7px;
+	}
+	
+	.canvas-container {
+		rotate: -90deg;
+		border-radius: 0;
+		width: 400px;
+		height: 270px;
+	}
+
+	.canvas-container .info-bar {
+		position: absolute;
+		justify-content: space-between;
+		align-items: center;
+		height: 100%;
+		width: 100%;
+	}
+
+	.canvas-container .info-bar .left-player-info,
+	.canvas-container .info-bar .right-player-info {
+		rotate: 90deg;
+		background: #696969;
+		width: 240px;
+	}
+
+	.canvas-container .info-bar .left-player-info {
+		left: -160px;
+	}
+
+	.canvas-container .info-bar .right-player-info {
+		right: -160px;
+	}
+
+	#resign-button {
+		top: 110px;
+		left: 420px;
+		width: 150px;
+	}
+	
+	.control-buttons {
+		transform: translate(-15%, 5%);
+	}
+
+	#msg {
+		font-size: 18px;
+	}
+
+	.start-game-button {
+		top: 75%;
+		font-size: 18px;
+		left: 30%;
+		height: 40px;
+	}
+
+	.level-button-container {
+		top: 47%;
+	}
+} 
+
+@media (max-width: 320px) {
+	.quit-game-button {
+		width: 120px;
+		height: 35px !important;
+		font-size: 18px;
+	}
+	.level-button-container {
+		top: 46%;
+		width: 120px;
+		height: 130px;
+	}
+	.level-button {
+		font-size: 13px;
+	}
+
+	.canvas-container {
+		width: 400px;
+		height: 250px;
+	}
+	.canvas-container .info-bar .left-player-info,
+	.canvas-container .info-bar .right-player-info {
+		width: 200px;
+		height: 35px;
+	}
+	.canvas-container .info-bar .left-player-info span,
+	.canvas-container .info-bar .right-player-info span {
+		font-size: 15px;
+	}
+	
+	.canvas-container .info-bar .left-player-info img,
+	.canvas-container .info-bar .right-player-info img {
+		width: 30px;
+		height: 30px;
+	}
+	.canvas-container .info-bar .left-player-info {
+		left: -130px;
+	}
+	.canvas-container .info-bar .right-player-info {
+		right: -130px;
+	}
+
+	#resign-button {
+		top: 100px;
+		left: 420px;
+		width: 130px;
+		font-size: 20px;
+	}
+	#resign-button img {
+		width: 18px;
+		height: 18px;
+	}
+	#resign-button:hover {
+		border: 1px solid #c67171;
+	}
+
+	.control-buttons {
+		width: 120px;
+		transform: translate(-20px, -30px);
+	}
+	.control-buttons button {
+		width: 40px;
+		height: 40px;
+		font-size: 20px;
+	}
+
+	#msg {
+		font-size: 15px;
+	}
+
+	.start-game-button {
+		top: 76%;
+		font-size: 15px;
+		left: 28%;
+	}
+}
